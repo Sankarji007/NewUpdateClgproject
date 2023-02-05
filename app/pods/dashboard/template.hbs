@@ -1,0 +1,37 @@
+
+
+<main>
+{{nav-bar callit=(action 'callfromsearch') callsave=(action 'redirctToSavedRecipe') email=emailaddress }}
+
+
+
+
+<div id="main" style="padding: 5%;">
+    <div class="row row-cols-6 g-9">
+        {{#each resultset.hits as |result|}}
+        {{my-cards result=result viewcards=(action 'viewcards')}}
+        {{/each}}
+    </div>
+</div>
+
+
+{{#if load}}
+    <div class="spinner-border"style="position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;"></div>
+{{/if}} 
+</main>
+
+    
+
+
+    
+
+   
+
+
+{{outlet}}
