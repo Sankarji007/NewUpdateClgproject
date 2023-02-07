@@ -17,9 +17,6 @@ export default Component.extend({
         {
             let cookieService = this.get('cookies');
             cookieService.clear('login');
-           
-            let cookies = cookieService.read();
-            console.log(cookies);
             window.location.reload();
         }
     }

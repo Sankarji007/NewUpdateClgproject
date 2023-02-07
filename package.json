@@ -36,6 +36,7 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.0.0",
+    "ember-social-share": "^0.3.5",
     "ember-source": "~2.18.0",
     "ember-truth-helpers": "^3.1.1",
     "ember-welcome-page": "^3.0.0",
@@ -44,5 +45,8 @@
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
+  },
+  "dependencies": {
+    "social-share.js": "^1.0.16"
   }
 }

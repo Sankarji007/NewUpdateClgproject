@@ -11,13 +11,12 @@ export default Controller.extend({
     init() {
         this._super(...arguments);
         this.recipes;
-        
+        // let obj={};
+        // obj.type='public';
+        // obj.app_id=ENV.APP_ID;
+        // obj.app_key=ENV.APP_KEY;
+        // obj["nutrients[CA]"]=30;
         this.load=true;
-        // this.emailaddress;
-        
-
-        
-        // console.log(ENV.API.clientKey);
         Ember.$.ajax({
                 url:'https://api.edamam.com/api/recipes/v2',
                 type:'GET',
@@ -80,6 +79,23 @@ export default Controller.extend({
         {
             console.log("hello");
             this.transitionToRoute('savedrecipe');
+        },
+        applyfilter(obj)
+        {
+            this.set('load',true);
+            Ember.$.ajax({
+                url:'https://api.edamam.com/api/recipes/v2',
+                type:'GET',
+                dataType:'json',
+                data:obj
+               
+            }).then((response)=>{
+                
+               this.send('store',response);
+               this.set('load',false);
+
+            });
+            
         }
 
 
